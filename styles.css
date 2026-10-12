@@ -1,0 +1,214 @@
+:root {
+  --fondo-1: #dff1ff;
+  --fondo-2: #f4f9ff;
+  --tarjeta: #ffffff;
+  --texto: #14304a;
+  --texto-suave: #5b7189;
+  --acento: #1f7ae0;
+  --acento-oscuro: #155db0;
+  --borde: #d5e3f2;
+  --error: #b3261e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--texto);
+  background: linear-gradient(180deg, var(--fondo-1), var(--fondo-2) 60%);
+}
+
+.contenedor {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 16px 24px;
+}
+
+/* Encabezado */
+.encabezado h1 {
+  margin: 0 0 4px;
+  font-size: 2rem;
+}
+
+.encabezado p {
+  margin: 0;
+  color: var(--texto-suave);
+}
+
+/* Formulario de búsqueda */
+.busqueda {
+  display: flex;
+  gap: 8px;
+  margin: 24px 0 8px;
+}
+
+.busqueda input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  font-size: 1rem;
+  color: var(--texto);
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+}
+
+.busqueda input:focus {
+  outline: 2px solid var(--acento);
+  border-color: transparent;
+}
+
+.busqueda button {
+  padding: 12px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--acento);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.busqueda button:hover {
+  background: var(--acento-oscuro);
+}
+
+/* Mensajes */
+.estado {
+  min-height: 1.5em;
+  margin: 8px 0 16px;
+  color: var(--texto-suave);
+}
+
+.estado.error {
+  color: var(--error);
+  font-weight: 600;
+}
+
+/* Tarjeta del clima actual */
+.tarjeta-actual {
+  padding: 24px;
+  text-align: center;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+}
+
+.lugar {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.icono-grande {
+  margin: 8px 0 0;
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.temperatura {
+  margin: 4px 0 0;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.descripcion {
+  margin: 0 0 16px;
+  color: var(--texto-suave);
+}
+
+.detalles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 0;
+  padding: 16px 0 0;
+  list-style: none;
+  border-top: 1px solid var(--borde);
+}
+
+.detalles li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.etiqueta {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+/* Pronóstico por días */
+.titulo-seccion {
+  margin: 28px 0 12px;
+  font-size: 1.15rem;
+}
+
+.dias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.dia {
+  padding: 16px 12px;
+  text-align: center;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+}
+
+.dia h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  text-transform: capitalize;
+}
+
+.dia .icono {
+  margin: 8px 0 4px;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.dia .desc-dia,
+.dia .lluvia {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+.dia .rango {
+  margin: 4px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Pie de página */
+.pie {
+  margin-top: 32px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.pie a {
+  color: var(--acento-oscuro);
+}
+
+/* Oculta la etiqueta visualmente pero la deja disponible para lectores de pantalla */
+.oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+  .detalles {
+    grid-template-columns: 1fr;
+  }
+}

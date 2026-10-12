@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal del Clima</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <main class="contenedor">
+
+    <header class="encabezado">
+      <h1>Portal del Clima</h1>
+      <p>Consulta el clima actual y el pronóstico de 5 días de cualquier ciudad.</p>
+    </header>
+
+    <form id="form-busqueda" class="busqueda">
+      <label for="ciudad" class="oculto">Ciudad</label>
+      <input type="text" id="ciudad" placeholder="Ej. Managua, Madrid, Tokio" autocomplete="off" required>
+      <button type="submit">Buscar</button>
+    </form>
+
+    <!-- Mensajes de carga o de error -->
+    <p id="estado" class="estado" role="status" aria-live="polite"></p>
+
+    <!-- Aquí JavaScript dibuja las tarjetas con los datos de la API -->
+    <section id="resultado" class="resultado"></section>
+
+    <footer class="pie">
+      <a href="https://open-meteo.com/" target="_blank" rel="noopener">Weather data by Open-Meteo.com</a>
+    </footer>
+
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
